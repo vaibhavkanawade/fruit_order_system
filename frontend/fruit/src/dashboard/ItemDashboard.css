@@ -1,0 +1,257 @@
+/* === Dashboard Container === */
+.dashboard-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* === Header === */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.header h2 {
+    font-size: 16px;
+    color: #555;
+    margin-top: 5px;
+}
+
+.create-btn {
+    background: #28a745;
+    color: #fff;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.create-btn:hover {
+    background: #218838;
+}
+
+/* === Table === */
+.item-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.item-table th,
+.item-table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.item-table th {
+    background: #f4f6f8;
+    font-weight: 600;
+}
+
+.item-table tr:hover {
+    background-color: #f9fafb;
+}
+
+/* === Badges === */
+.badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.badge.green {
+    background: #28a745;
+}
+
+/* === Action Buttons === */
+.view-btn,
+.edit-btn,
+.delete-btn {
+    margin: 0 4px;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.view-btn {
+    background: #17a2b8;
+    color: #fff;
+}
+
+.edit-btn {
+    background: #ffc107;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: #fff;
+}
+
+.view-btn:hover {
+    background: #138496;
+}
+
+.edit-btn:hover {
+    background: #e0a800;
+}
+
+.delete-btn:hover {
+    background: #c82333;
+}
+
+/* === Pagination === */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 5px;
+}
+
+.page-btn {
+    padding: 6px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    background: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    /* transition: background 0.3s, color 0.3s; */
+}
+
+
+.page-btn:hover {
+    background: #8edaef;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+.order-btn {
+    background-color: #198754;
+    color: #fff;
+    padding: 8px 12px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.order-btn:hover {
+    background-color: #157347;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.order-table th,
+.order-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-badge.delivered {
+    background-color: #198754;
+    color: white;
+}
+
+.status-badge.pending {
+    background-color: #ffc107;
+    color: black;
+}
+
+.deliver-btn {
+    background-color: #0d6efd;
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.deliver-btn:hover {
+    background-color: #0b5ed7;
+}
+
+
+.back-btn {
+    background-color: #5ef3f0;
+    color: rgb(12, 11, 11);
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #88f797;
+}

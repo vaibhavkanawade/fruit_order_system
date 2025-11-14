@@ -1,0 +1,124 @@
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 5%;
+    /* reduce horizontal padding but keep some space */
+    background: linear-gradient(to bottom, #fff, #f9f9f9);
+    flex-wrap: wrap;
+    min-height: 90vh;
+    width: 100vw;
+    /* full viewport width */
+    box-sizing: border-box;
+    /* include padding in width */
+    margin: 0;
+    /* remove default margin */
+}
+
+/* Left Side Text */
+.hero-content {
+    flex: 1;
+    max-width: 550px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: bold;
+    color: #222;
+}
+
+.hero-content .highlight {
+    color: #f39c12;
+}
+
+.hero-content h3 {
+    margin-top: 15px;
+    font-size: 1.3rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.hero-content p {
+    margin-top: 10px;
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Button */
+.order-btn {
+    margin-top: 20px;
+    text-decoration: none !important;
+    background: #e13d37 !important;
+    color: white;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+}
+
+.order-btn:hover {
+    background: #c9302c;
+    color: white;
+}
+
+/* Right Side Image */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.hero-image img {
+    width: 90%;
+    max-width: 400px;
+    border-radius: 50%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 5%;
+        /* smaller padding for mobile */
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-image {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-width: 300px;
+    }
+}

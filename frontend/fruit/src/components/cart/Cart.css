@@ -1,0 +1,135 @@
+/* Cart.css */
+
+/* 🛒 Shopping cart container */
+.shopping-cart {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cart heading */
+.shopping-cart h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* 🧾 Individual cart item */
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart-item h3 {
+    flex: 1;
+    font-size: 1.1rem;
+    color: #222;
+}
+
+/* Quantity controls */
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quantity button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.quantity button:hover {
+    background-color: #45a049;
+}
+
+.quantity span {
+    min-width: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Price text */
+.cart-item p {
+    width: 150px;
+    text-align: right;
+    font-weight: 500;
+}
+
+/* Subtotal */
+.shopping-cart p strong {
+    display: block;
+    text-align: right;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* ❌ Remove the generic .shopping-cart button styles 
+   (because it was overriding all button backgrounds) */
+
+/* 🟠 Proceed to Buy button */
+.checkout-btn {
+    width: 100%;
+    margin-top: 20px;
+    background-color: #ff5722;
+    color: white;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background-color: #f4af46;
+}
+
+/* 🟢 Go To Products button */
+.go-products-btn {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #28a745;
+    /* green */
+    color: white;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.go-products-btn:hover {
+    background-color: #218838;
+    /* darker green */
+}
+
+/* Empty cart message */
+.empty-cart {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 1.5rem;
+    color: #666;
+}
