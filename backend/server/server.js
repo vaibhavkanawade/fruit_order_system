@@ -1,4 +1,5 @@
 // server.js
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
@@ -7,8 +8,12 @@ const cors = require('cors');
 
 const productRoutes = require('../routes/productRoutes');
 const orderRoutes = require('../routes/orderRoutes');
-mongoose.connect('mongodb://localhost:27017/fruits'
-);
+
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/fruits';
+
+mongoose.connect(MONGODB_URI)
+    .then(() => console.log('Connected to MongoDB'))
+    .catch((err) => console.error('MongoDB connection error:', err));
 
 app.use(express.json());
 app.use(cors()); // Use the cors middleware
@@ -373,26 +378,26 @@ const seedDatabase = async () => {
     }
 };
 
-// Seed the database on server startup
+// Seed the database on server startup (will run on cold-starts in serverless)
 seedDatabase();
 
-// Define API endpoint for fetching all products
+// Define API endpoint for fetching all products (kept for compatibility)
 app.get('/api/products', async (req, res) => {
     try {
-        // Fetch all products from the database
         const allProducts = await Product.find();
-
-        // Send the entire products array as JSON response
         res.json(allProducts);
     } catch (error) {
         console.error(error);
-        res.status(500)
-            .json({ error: 'Internal Server Error' });
+        res.status(500).json({ error: 'Internal Server Error' });
     }
 });
 
-app.listen(PORT, () => {
-    console.log(
-        `Server is running on port ${PORT}`
-    );
-});
+// When running locally (node server/server.js) listen on PORT.
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+    });
+} else {
+    // Export a handler for serverless platforms (Vercel)
+    module.exports = (req, res) => app(req, res);
+}

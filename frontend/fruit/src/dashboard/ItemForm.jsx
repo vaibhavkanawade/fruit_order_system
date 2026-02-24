@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import './ItemForm.css';
-
-const API_URL = 'http://localhost:5000/api/products';
+import { PRODUCT_API } from '../config/api';
 
 const ItemForm = () => {
     const { id } = useParams();
@@ -12,7 +11,7 @@ const ItemForm = () => {
     // 🟡 Load data if we're editing
     useEffect(() => {
         if (id) {
-            fetch(`${API_URL}/${id}`)
+            fetch(`${PRODUCT_API}/${id}`)
                 .then(res => res.json())
                 .then(data => setItem(data))
                 .catch(err => console.error('Error fetching item:', err));
@@ -26,7 +25,7 @@ const ItemForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const method = id ? 'PUT' : 'POST';
-        const url = id ? `${API_URL}/${id}` : API_URL;
+        const url = id ? `${PRODUCT_API}/${id}` : PRODUCT_API;
 
         try {
             const res = await fetch(url, {

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './ItemDashboard.css';
-
-const API_URL = 'http://localhost:5000/api/products';
+import { PRODUCT_API } from '../config/api';
 
 const ItemView = () => {
     const { id } = useParams();
@@ -13,7 +12,7 @@ const ItemView = () => {
     useEffect(() => {
         const fetchItem = async () => {
             try {
-                const res = await fetch(`${API_URL}/${id}`);
+                const res = await fetch(`${PRODUCT_API}/${id}`);
                 if (!res.ok) {
                     throw new Error('Failed to fetch item');
                 }

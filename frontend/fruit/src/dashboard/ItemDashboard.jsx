@@ -120,9 +120,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ItemDashboard.css';
-
-const PRODUCT_API = 'http://localhost:5000/api/products';
-const ORDER_API = 'http://localhost:5000/api/orders';
+import { PRODUCT_API, ORDER_API } from '../config/api';
 
 const ItemDashboard = () => {
     const [items, setItems] = useState([]);
@@ -157,7 +155,7 @@ const ItemDashboard = () => {
 
     // 📦 Fetch Orders
     const fetchOrders = async () => {
-        const res = await fetch('http://localhost:5000/api/orders');
+        const res = await fetch(ORDER_API);
         const data = await res.json();
         setOrders(data);
         setShowOrders(true);

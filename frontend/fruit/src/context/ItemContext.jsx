@@ -1,5 +1,6 @@
 // context/ItemContext.js
 import { createContext, useEffect, useState } from "react";
+import { PRODUCT_API } from '../config/api';
 
 const itemContext = createContext();
 
@@ -13,7 +14,7 @@ function CustomItemContext({ children }) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("http://localhost:5000/api/products");
+                const response = await fetch(PRODUCT_API);
                 const products = await response.json();
                 setProducts(products);
             } catch (error) {
